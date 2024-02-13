@@ -28,7 +28,7 @@ with st.form(key="machinery", clear_on_submit=True):
     submit_button = st.form_submit_button(label="Submit")
     st.title("Machinery Details")
     supervisor_name = st.text_input(label="Supervisor Name*")
-    project_name = st.text_input(label="Project Name*")
+    project_name = st.number_input(label="Project Name*", value=0, step=1)
     field_values = []
     for field_name in fields:
         field_value = st.text_input(f"Enter {field_name}: ")
