@@ -31,7 +31,7 @@ with st.form(key="machinery", clear_on_submit=True):
     project_name = st.text_input(label="Project Name*")
     field_values = []
     for field_name in fields:
-        field_value = st.text_input(f"Enter {field_name}: ", options=dd)
+        field_value = st.text_input(f"Enter {field_name}: ")
         if field_value == 'select':
             st.warning(f"Please select a value for {field_name}")
             st.stop()
