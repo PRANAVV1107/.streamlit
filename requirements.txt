@@ -3,3 +3,4 @@ streamlit
 st-gsheets-connection
 streamlit-datalist
 streamlit_js_eval
+streamlit-autorefresh
