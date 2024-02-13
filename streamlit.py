@@ -5,6 +5,7 @@ from streamlit_gsheets import GSheetsConnection
 from streamlit_datalist import stDatalist
 import time
 from streamlit_js_eval import streamlit_js_eval
+from streamlit_autorefresh import st_autorefresh
 
 # Establish the Google Sheets connection
 conn = st.connection("gsheets", type=GSheetsConnection)
@@ -66,6 +67,7 @@ with st.form(key="machinery", clear_on_submit=True):
             st.success("submitted!")
             time.sleep(3)
             st.rerun()
-        streamlit_js_eval(js_expressions="parent.window.location.reload()")
+            streamlit_js_eval(js_expressions="parent.window.location.reload()")
+            st_autorefresh(interval=1, limit=1, key="fizzbuzzcounter")
             
             
