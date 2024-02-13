@@ -66,6 +66,6 @@ with st.form(key="machinery", clear_on_submit=True):
             st.success("submitted!")
             time.sleep(3)
             st.rerun()
-            streamlit_js_eval(js_expressions="parent.window.location.reload()")
+        streamlit_js_eval(js_expressions="parent.window.location.reload()")
             
             
