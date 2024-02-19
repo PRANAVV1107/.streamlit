@@ -60,7 +60,7 @@ with st.form(key="machinery", clear_on_submit=True):
             data['Supervisor Name'] = supervisor_name
             data['timestamp'] = timestamp
             data.reset_index(drop=True, inplace=True)
-            e_data.reset_index(drop=True, inplace=True
+            e_data.reset_index(drop=True, inplace=True)
             df = pd.concat([data, e_data], ignore_index=True)
             st.write("Final DataFrame:", df)
 
