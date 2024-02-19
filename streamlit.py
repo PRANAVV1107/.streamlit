@@ -65,7 +65,7 @@ with st.form(key="machinery", clear_on_submit=True):
             
             # Concatenate the data
             df = pd.concat([e_data, data], ignore_index=True)
-                        st.write("Final DataFrame:", df)
+            st.write("Final DataFrame:", df)
 
             conn.update(worksheet="Sheet1", data = df)
             
