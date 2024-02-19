@@ -55,14 +55,17 @@ with st.form(key="machinery", clear_on_submit=True):
             for field_name, field_value in zip(fields, field_values):
                 st.write(f"{field_name}: {field_value}")
 
-            data = pd.DataFrame([field_values], columns=fields)
-            data['Project Name'] = project_name
-            data['Supervisor Name'] = supervisor_name
-            data['timestamp'] = timestamp
-            data.reset_index(drop=True, inplace=True)
-            e_data.reset_index(drop=True, inplace=True)
-            df = pd.concat([data, e_data], ignore_index=True)
-            st.write("Final DataFrame:", df)
+        data = pd.DataFrame([field_values], columns=fields)
+        data['Project Name'] = project_name
+        data['Supervisor Name'] = supervisor_name
+        data['timestamp'] = timestamp
+        
+        # Reorder columns to match 'e_data'
+        data = data[['Project Name', 'Supervisor Name', 'timestamp'] + fields]
+        
+        # Concatenate the data
+        df = pd.concat([e_data, data], ignore_index=True)
+                    st.write("Final DataFrame:", df)
 
             conn.update(worksheet="Sheet1", data = df)
             
