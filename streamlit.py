@@ -3,7 +3,7 @@ import datetime
 import pandas as pd
 from streamlit_gsheets import GSheetsConnection
 from streamlit_datalist import stDatalist
-import time
+from datetime import datetime
 from streamlit_js_eval import streamlit_js_eval
 from streamlit_autorefresh import st_autorefresh
 
@@ -18,7 +18,7 @@ dd.append('other')
 # List of field names
 fields = ['Chipping Machine', 'Roller', 'Mixer', 'Lifting Machine', 'Other Machines']
 
-timestamp = time.time()
+timestamp = datetimetime.now()
 
 with st.form(key="machinery", clear_on_submit=True):
 
