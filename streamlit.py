@@ -18,7 +18,7 @@ dd.append('other')
 # List of field names
 fields = ['Chipping Machine', 'Roller', 'Mixer', 'Lifting Machine', 'Other Machines']
 
-timestamp = datetimetime.now()
+timestamp = datetime.now()
 
 with st.form(key="machinery", clear_on_submit=True):
 
