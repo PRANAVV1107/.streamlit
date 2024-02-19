@@ -18,11 +18,8 @@ dd.append('other')
 # List of field names
 fields = ['Chipping Machine', 'Roller', 'Mixer', 'Lifting Machine', 'Other Machines']
 
-#def generate_input_fields(field_names):
-    
+timestamp = time.time()
 
- 
-    
 with st.form(key="machinery", clear_on_submit=True):
 
     submit_button = st.form_submit_button(label="Submit")
@@ -53,12 +50,14 @@ with st.form(key="machinery", clear_on_submit=True):
             st.write("Submitted Values:")
             st.write("Project/Site Name:", project_name)
             st.write("Supervisor Name:", supervisor_name)
+            st.write("timestamp:" , timestamp) 
             for field_name, field_value in zip(fields, field_values):
                 st.write(f"{field_name}: {field_value}")
 
             data = pd.DataFrame([field_values], columns=fields)
             data['Project Name'] = project_name
             data['Supervisor Name'] = supervisor_name
+            data['timestamp'] = timestamp
             df = pd.concat([data, e_data], ignore_index=True)
             st.write("Final DataFrame:", df)
 
