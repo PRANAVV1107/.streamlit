@@ -50,7 +50,7 @@ with st.form(key="machinery", clear_on_submit=True):
             st.write("Submitted Values:")
             st.write("Project/Site Name:", project_name)
             st.write("Supervisor Name:", supervisor_name)
-            st.write("timestamp:" , timestamp) 
+            st.write("timestamp:" , pd.Timestamp.now()) 
             for field_name, field_value in zip(fields, field_values):
                 st.write(f"{field_name}: {field_value}")
 
